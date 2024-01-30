@@ -20,5 +20,5 @@ Aplikasi ini dibuat untuk menyelesaikan masalah Travelling Salesman Problem (TSP
 
 ## Catatan
 
-- Pastikan Anda memasukkan koordinat dengan benar dan dalam format yang benar ('lat, lon').
+- Pastikan memasukkan koordinat dengan benar dan dalam format yang benar ('lat, lon').
 - Aplikasi ini menggunakan algoritma greedy, yang mungkin tidak selalu menghasilkan solusi optimal untuk TSP.
