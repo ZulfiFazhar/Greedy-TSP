@@ -44,7 +44,7 @@ def tsp_greedy(start_kota, kota_coords):
     return rute
 
 # Streamlit UI
-st.title("Traveling Salesman Problem (TSP) Dashboard")
+st.title("Travelling Salesman Problem (TSP) Dashboard")
 
 # Input kota_coords dari pengguna
 kota_coords = input_kota_coords()
@@ -88,6 +88,6 @@ st.subheader("Peta Rute TSP")
 
 try :    
     html_map = peta_tsp._repr_html_()
-    st.components.v1.html(html_map, width=800, height=800)
+    st.components.v1.html(html_map, width=800, height=1500)
 except NameError :
     st.error("No Value")
