@@ -2,7 +2,7 @@
 
 Aplikasi ini dibuat untuk menyelesaikan masalah Traveling Salesman Problem (TSP) menggunakan algoritma greedy. Aplikasi ini dibangun dengan Streamlit dan menggunakan library geopy untuk menghitung jarak antara kota-kota dan Folium untuk memvisualisasikan rute TSP pada peta.
 
-[link text](https:)
+[Link Demo Streamlit](https://tsp-using-greedy.streamlit.app/)
 
 ## Cara Menggunakan
 
