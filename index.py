@@ -2,7 +2,7 @@ import streamlit as st
 from geopy.distance import geodesic
 import folium
 
-# Membuat funtion untuk nantinya dipakai
+# Membuat function
 
 def input_kota_coords():
     kota_coords = {}
@@ -46,10 +46,10 @@ def tsp_greedy(start_kota, kota_coords):
 # Streamlit UI
 st.title("Travelling Salesman Problem (TSP) Dashboard")
 
-# Input kota_coords dari pengguna
+# Input kota_coords
 kota_coords = input_kota_coords()
 
-# Input start_kota dari pengguna
+# Input start_kota
 start_kota = st.selectbox("Pilih nama kota start:", list(kota_coords.keys()))
 
 # Hitung rute TSP

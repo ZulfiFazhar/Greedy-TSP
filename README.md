@@ -4,6 +4,36 @@ Aplikasi ini dibuat untuk menyelesaikan masalah Travelling Salesman Problem (TSP
 
 [Link Demo Streamlit](https://tsp-using-greedy.streamlit.app/)
 
+## Cara Menjalankan Streamlit Secara Local
+
+### Jika menggunakan Anaconda:
+1. Buat environment baru atau langsung aktifkan environment yang biasa dipakai
+```bash
+conda create --name streamlit python=3.10
+```
+2. Aktifkan environment yang sudah dibuat
+```bash
+conda activate streamlit
+```
+3. Install dependensi yang ada di dalam requirements.txt dengan `pip`
+```bash
+pip install requirements.txt
+```
+4. Jalankan dashboard dengan cara
+```bash
+streamlit run index.py
+```
+
+### Jika **TIDAK** menggunakan Anaconda:
+1. Install dependensi yang ada di dalam requirements.txt dengan `pip`
+```bash
+pip install requirements.txt
+```
+2. Jalankan dashboard dengan cara
+```bash
+streamlit run index.py
+```
+
 ## Cara Menggunakan
 
 1. Masukkan jumlah kota yang ingin Anda kunjungi.
