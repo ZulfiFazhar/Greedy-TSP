@@ -17,7 +17,7 @@ conda activate streamlit
 ```
 3. Install dependensi yang ada di dalam requirements.txt dengan `pip`
 ```bash
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 4. Jalankan dashboard dengan cara
 ```bash
@@ -27,7 +27,7 @@ streamlit run index.py
 ### Jika **TIDAK** menggunakan Anaconda:
 1. Install dependensi yang ada di dalam requirements.txt dengan `pip`
 ```bash
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 2. Jalankan dashboard dengan cara
 ```bash
