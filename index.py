@@ -15,30 +15,29 @@ def kota_bandung():
         "Lengkong": (-6.932694, 107.627449),
         "Bandung Kidul": (-6.9557571 , 107.6304105),
         "Buah Batu": (-6.952390, 107.651128),
-        "Rancasari": (-6.9539456, 107.6777669),
-        "Gedebage": (-6.9505768, 107.6984879),
-        "Cibiru": (-6.9163257, 107.7192104),
-        "Panyileukan": (-6.9324362, 107.704441203971),
-        "Ujung Berung": (-6.9064866, 107.7073688),
-        "Cinambo": (-6.9328971, 107.6896073),
-        "Arcamanik": (-6.9179069, 107.6777669),
-        "Antapani": (-6.918583, 107.660007),
-        "Mandalajati": (-6.8975476, 107.6718469),
-        "Kiaracondong": (-6.9241819, 107.6481682),
-        "Batununggal": (-6.9529815, 107.630909),
-        "Sumur Bandung": (-6.9152353, 107.612654),
-        "Andir": (-6.9114323, 107.5771444),
-        "Cicendo": (-6.9009118, 107.5830623),
-        "Bandung Wetan": (-6.9047153, 107.6185727),
-        "Cibeunying Kidul": (-6.8984464, 107.6481682),
-        "Cibeuying Kaler": (-6.8937492, 107.6363296),
-        "Coblong": (-6.8919604, 107.6156133),
-        "Sukajadi": (-6.8903936, 107.5889804),
-        "Sukasari": (-6.866465412066975, 107.5841221316536),
-        "Cidadap": (-6.863482, 107.5904569)
+        "Rancasari": (-6.9539456, 107.6777669)
     }
-
     return kota_coords
+        # "Gedebage": (-6.9505768, 107.6984879),
+        # "Cibiru": (-6.9163257, 107.7192104),
+        # "Panyileukan": (-6.9324362, 107.704441203971),
+        # "Ujung Berung": (-6.9064866, 107.7073688),
+        # "Cinambo": (-6.9328971, 107.6896073),
+        # "Arcamanik": (-6.9179069, 107.6777669),
+        # "Antapani": (-6.918583, 107.660007),
+        # "Mandalajati": (-6.8975476, 107.6718469),
+        # "Kiaracondong": (-6.9241819, 107.6481682),
+        # "Batununggal": (-6.9529815, 107.630909),
+        # "Sumur Bandung": (-6.9152353, 107.612654),
+        # "Andir": (-6.9114323, 107.5771444),
+        # "Cicendo": (-6.9009118, 107.5830623),
+        # "Bandung Wetan": (-6.9047153, 107.6185727),
+        # "Cibeunying Kidul": (-6.8984464, 107.6481682),
+        # "Cibeuying Kaler": (-6.8937492, 107.6363296),
+        # "Coblong": (-6.8919604, 107.6156133),
+        # "Sukajadi": (-6.8903936, 107.5889804),
+        # "Sukasari": (-6.866465412066975, 107.5841221316536),
+        # "Cidadap": (-6.863482, 107.5904569)
 
 def jawa_barat():
     kota_coords = {
@@ -51,24 +50,24 @@ def jawa_barat():
         "Kota Cimahi": (-6.882252265828945, 107.54206579280836),
         "Kota Tasikmalaya": (-7.354854747830193, 108.21698654797164),
         "Kota Banjar": (-7.366750116329321, 108.53783174690206),
-        "Kabupaten Sukabumi": (-7.1494884611305185, 106.86876947909825),
-        "Kabupaten Cianjur": (-6.81282455739, 107.15167983266056),
-        "Kabupaten Bogor": (-6.465670348406569, 106.96977860533183),
-        "Kabupaten Bandung": (-7.0242909551453145, 107.52987182218305),
-        "Kabupaten Garut": (-7.364597406113142, 107.79566573676748),
-        "Kabupaten Tasikmalaya": (-7.614759909077524, 108.25364994198331),
-        "Kabupaten Ciamis": (-7.328165691590737, 108.33745325085214),
-        "Kabupaten Kuningan": (-6.981429100665751, 108.4979187815114),
-        "Kabupaten Cirebon": (-6.7657450942872055, 108.45094087466123),
-        "Kabupaten Majalengka": (-6.838003226665918, 108.23017666665162),
-        "Kabupaten Sumedang": (-6.837055261419958, 107.92423291669608),
-        "Kabupaten Indramayu": (-6.347100867879999, 108.33079612192631),
-        "Kabupaten Subang": (-6.563989466152586, 107.75967723026652),
-        "Kabupaten Purwakarta": (-6.539083595642665, 107.45720728317856),
-        "Kabupaten Karawang": (-6.302464629592669, 107.29741241782335),
-        "Kabupaten Bekasi": (-6.36767590155025, 107.17257617632715),
-        "Kabupaten Bandung Barat": (-6.843156844111063, 107.47868731798154),
-        "Kabupaten Pangandaran": (-7.68544880499761, 108.65293626137321)
+        # "Kabupaten Sukabumi": (-7.1494884611305185, 106.86876947909825),
+        # "Kabupaten Cianjur": (-6.81282455739, 107.15167983266056),
+        # "Kabupaten Bogor": (-6.465670348406569, 106.96977860533183),
+        # "Kabupaten Bandung": (-7.0242909551453145, 107.52987182218305),
+        # "Kabupaten Garut": (-7.364597406113142, 107.79566573676748),
+        # "Kabupaten Tasikmalaya": (-7.614759909077524, 108.25364994198331),
+        # "Kabupaten Ciamis": (-7.328165691590737, 108.33745325085214),
+        # "Kabupaten Kuningan": (-6.981429100665751, 108.4979187815114),
+        # "Kabupaten Cirebon": (-6.7657450942872055, 108.45094087466123),
+        # "Kabupaten Majalengka": (-6.838003226665918, 108.23017666665162),
+        # "Kabupaten Sumedang": (-6.837055261419958, 107.92423291669608),
+        # "Kabupaten Indramayu": (-6.347100867879999, 108.33079612192631),
+        # "Kabupaten Subang": (-6.563989466152586, 107.75967723026652),
+        # "Kabupaten Purwakarta": (-6.539083595642665, 107.45720728317856),
+        # "Kabupaten Karawang": (-6.302464629592669, 107.29741241782335),
+        # "Kabupaten Bekasi": (-6.36767590155025, 107.17257617632715),
+        # "Kabupaten Bandung Barat": (-6.843156844111063, 107.47868731798154),
+        # "Kabupaten Pangandaran": (-7.68544880499761, 108.65293626137321)
     }
 
     return kota_coords
@@ -89,7 +88,7 @@ def input_kota_coords():
     return kota_coords
 
 def hitung_jarak(kota1, kota2, kota_coords):
-    return geodesic(kota_coords[kota1], kota_coords[kota2]).kilometers
+    return geodesic(kota_coords[kota1], kota_coords[kota2]).meters
 
 def tsp_greedy(start_kota, kota_coords):
     rute = [start_kota]
@@ -102,7 +101,7 @@ def tsp_greedy(start_kota, kota_coords):
         kota_terdekat = None
 
         for kota in kota_belum_dikunjungi:
-            jarak = hitung_jarak(kota_saat_ini, kota, kota_coords)
+            jarak = int(hitung_jarak(kota_saat_ini, kota, kota_coords))
             if jarak < jarak_minimal:
                 jarak_minimal = jarak
                 kota_terdekat = kota
@@ -170,12 +169,12 @@ with tab1:
     bandung = kota_bandung()
     kota = jawa_barat()
 
-    pilihan = st.selectbox("Pilih Lokasi", ("Kota Bandung", "Jawa Barat"))
+    pilihan = st.selectbox("Pilih Lokasi", ("Jawa Barat", "Kota Bandung"))
 
-    if pilihan == "Kota Bandung":
-        tsp(bandung)
-    elif pilihan == "Jawa Barat":
+    if pilihan == "Jawa Barat":
         tsp(kota)
+    elif pilihan == "Kota Bandung":
+        tsp(bandung)
 
 with tab2:
     # Input kota_coords
