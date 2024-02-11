@@ -50,6 +50,9 @@ def jawa_barat():
         "Kota Cimahi": (-6.882252265828945, 107.54206579280836),
         "Kota Tasikmalaya": (-7.354854747830193, 108.21698654797164),
         "Kota Banjar": (-7.366750116329321, 108.53783174690206),
+    }
+
+    return kota_coords
         # "Kabupaten Sukabumi": (-7.1494884611305185, 106.86876947909825),
         # "Kabupaten Cianjur": (-6.81282455739, 107.15167983266056),
         # "Kabupaten Bogor": (-6.465670348406569, 106.96977860533183),
@@ -68,9 +71,6 @@ def jawa_barat():
         # "Kabupaten Bekasi": (-6.36767590155025, 107.17257617632715),
         # "Kabupaten Bandung Barat": (-6.843156844111063, 107.47868731798154),
         # "Kabupaten Pangandaran": (-7.68544880499761, 108.65293626137321)
-    }
-
-    return kota_coords
 
 def input_kota_coords():
     kota_coords = {}
@@ -90,6 +90,26 @@ def input_kota_coords():
 def hitung_jarak(kota1, kota2, kota_coords):
     return geodesic(kota_coords[kota1], kota_coords[kota2]).meters
 
+def seleksi(kota_belum_dikunjungi, kota_saat_ini, kota_coords):
+    jarak_minimal = float('inf')
+    kota_terdekat = None
+
+    for kota in kota_belum_dikunjungi:
+        jarak = int(hitung_jarak(kota_saat_ini, kota, kota_coords))
+        if jarak < jarak_minimal:
+            jarak_minimal = jarak
+            kota_terdekat = kota
+
+    return kota_terdekat
+
+def solusi(rute, kota_terdekat):
+    rute.append(kota_terdekat)
+    return rute
+
+def layak(kota_belum_dikunjungi, kota_terdekat):
+    kota_belum_dikunjungi.remove(kota_terdekat)
+    return kota_belum_dikunjungi
+
 def tsp_greedy(start_kota, kota_coords):
     rute = [start_kota]
     kota_belum_dikunjungi = list(kota_coords.keys())
@@ -97,66 +117,58 @@ def tsp_greedy(start_kota, kota_coords):
 
     while kota_belum_dikunjungi:
         kota_saat_ini = rute[-1]
-        jarak_minimal = float('inf')
-        kota_terdekat = None
-
-        for kota in kota_belum_dikunjungi:
-            jarak = int(hitung_jarak(kota_saat_ini, kota, kota_coords))
-            if jarak < jarak_minimal:
-                jarak_minimal = jarak
-                kota_terdekat = kota
-
-        rute.append(kota_terdekat)
-        kota_belum_dikunjungi.remove(kota_terdekat)
+        kota_terdekat = seleksi(kota_belum_dikunjungi, kota_saat_ini, kota_coords)
+        rute = solusi(rute, kota_terdekat)
+        kota_belum_dikunjungi = layak(kota_belum_dikunjungi, kota_terdekat)
 
     return rute
 
 def tsp(coords):
-        start_kota = st.selectbox("Pilih Nama Lokasi Keberangkatan:", list(coords.keys()))
+    start_kota = st.selectbox("Pilih Nama Lokasi Keberangkatan:", list(coords.keys()))
 
-        try :
-            rute_tsp = tsp_greedy(start_kota, coords)
-        except ValueError :
-            st.error("No Value")
+    try :
+        rute_tsp = tsp_greedy(start_kota, coords)
+    except ValueError :
+        st.error("No Value")
 
-        # Tampilkan hasil rute
-        st.subheader("Solusi TSP")
-        try :
-            rute_string = ' - '.join(rute_tsp)
-            st.write(f"{rute_string} - {start_kota}")
-        except NameError :
-            st.error("No Value")
+    # Tampilkan hasil rute
+    st.subheader("Solusi TSP")
 
-        # Buat peta TSP
-        try :
-            peta_tsp = folium.Map(location=coords[start_kota], zoom_start=12)
-        except KeyError :
-            print("")
+    try :
+        rute_string = ' - '.join(rute_tsp)
+        st.write(f"{rute_string} - {start_kota}")
+    except NameError :
+        st.error("No Value")
 
-        for kota in coords:
-            folium.Marker(coords[kota], popup=kota).add_to(peta_tsp)
+    # Buat peta TSP
+    try :
+        peta_tsp = folium.Map(location=coords[start_kota], zoom_start=12)
+    except KeyError :
+        print("")
 
-        try :
-            koordinat_rute = [coords[k] for k in rute_tsp] + [coords[start_kota]]
+    for kota in coords:
+        folium.Marker(coords[kota], popup=kota).add_to(peta_tsp)
 
-            folium.PolyLine(koordinat_rute, color='red', weight=2.5, opacity=1).add_to(peta_tsp)
-            
-            folium.Marker(
-                location=coords[start_kota], 
-                popup=start_kota,
-                icon=folium.Icon(color='green')
-                ).add_to(peta_tsp)
-        except NameError :
-            print("")
+    try :
+        koordinat_rute = [coords[k] for k in rute_tsp] + [coords[start_kota]]
+        folium.PolyLine(koordinat_rute, color='red', weight=2.5, opacity=1).add_to(peta_tsp)
+        
+        folium.Marker(
+            location=coords[start_kota], 
+            popup=start_kota,
+            icon=folium.Icon(color='green')
+            ).add_to(peta_tsp)
+    except NameError :
+        print("")
 
-        # Tampilkan peta di Streamlit
-        st.subheader("Peta Rute TSP")
-
-        try :    
-            html_map = peta_tsp._repr_html_()
-            st.components.v1.html(html_map, width=800, height=490)
-        except NameError :
-            st.error("No Value")
+    # Tampilkan peta di Streamlit
+    st.subheader("Peta Rute TSP")
+    
+    try :    
+        html_map = peta_tsp._repr_html_()
+        st.components.v1.html(html_map, width=800, height=490)
+    except NameError :
+        st.error("No Value")
 
 # Streamlit UI
 st.title("Travelling Salesman Problem (TSP) Dashboard")
