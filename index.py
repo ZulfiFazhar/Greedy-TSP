@@ -88,7 +88,7 @@ def input_kota_coords():
     return kota_coords
 
 def hitung_jarak(kota1, kota2, kota_coords):
-    return geodesic(kota_coords[kota1], kota_coords[kota2]).meters
+    return geodesic(kota_coords[kota1], kota_coords[kota2]).kilometers
 
 def seleksi(kota_belum_dikunjungi, kota_saat_ini, kota_coords):
     jarak_minimal = float('inf')
@@ -123,8 +123,15 @@ def tsp_greedy(start_kota, kota_coords):
 
     return rute
 
+def hitung_total_jarak(rute, kota_coords):
+    total_jarak = 0
+    for i in range(len(rute) - 1):
+        total_jarak += hitung_jarak(rute[i], rute[i+1], kota_coords)
+    total_jarak += hitung_jarak(rute[-1], rute[0], kota_coords)  # Menghitung jarak dari kota terakhir kembali ke kota awal
+    return total_jarak
+
 def tsp(coords):
-    start_kota = st.selectbox("Pilih Nama Lokasi Keberangkatan:", list(coords.keys()))
+    start_kota = st.selectbox("Pilih Lokasi Keberangkatan:", list(coords.keys()))
 
     try :
         rute_tsp = tsp_greedy(start_kota, coords)
@@ -135,8 +142,15 @@ def tsp(coords):
     st.subheader("Solusi TSP")
 
     try :
-        rute_string = ' - '.join(rute_tsp)
-        st.write(f"{rute_string} - {start_kota}")
+        rute_string = ' → '.join(rute_tsp)
+        st.write(f"{rute_string} → {start_kota}")
+    except NameError :
+        st.error("No Value")
+
+    # Tampilkan total jarak yang sudah ditempuh
+    try :
+        total_jarak = hitung_total_jarak(rute_tsp, coords)
+        st.write(f"Total jarak yang ditempuh: {int(total_jarak)} km")
     except NameError :
         st.error("No Value")
 
