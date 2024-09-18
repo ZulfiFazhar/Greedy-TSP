@@ -4,12 +4,12 @@ Aplikasi ini dibuat untuk menyelesaikan masalah Travelling Salesman Problem (TSP
 
 Contributors:
 
-| NIM | Nama Lengkap | Kontribusi |
-|-----| -------------|-----------|
-|10122005|Zulfi Fadilah Azhar|100%
-|10122018|Mutiara Fatiha|100%
-|10122029|Alif Vidya Kusumah|100%
-|10122034|Dawla Izza Al-Din Noor | 100%
+| NIM      | Nama Lengkap           | Kontribusi |
+| -------- | ---------------------- | ---------- |
+| 10122005 | Zulfi Fadilah Azhar    | 100%       |
+| 10122018 | Mutiara Fatiha         | 100%       |
+| 10122029 | Alif Vidya Kusumah     | 100%       |
+| 10122034 | Dawla Izza Al-Din Noor | 100%       |
 
 <br>
 
@@ -17,33 +17,7 @@ Contributors:
 
 ## Cara Menjalankan Streamlit Secara Local
 
-### Jika menggunakan Anaconda:
-1. Buat environment baru atau langsung aktifkan environment yang biasa dipakai
-```bash
-conda create --name streamlit python=3.10
-```
-2. Aktifkan environment yang sudah dibuat
-```bash
-conda activate streamlit
-```
-3. Install dependensi yang ada di dalam requirements.txt dengan `pip`
-```bash
-pip install -r requirements.txt
-```
-4. Jalankan dashboard dengan cara
-```bash
-streamlit run index.py
-```
-
-### Jika **TIDAK** menggunakan Anaconda:
-1. Install dependensi yang ada di dalam requirements.txt dengan `pip`
-```bash
-pip install -r requirements.txt
-```
-2. Jalankan dashboard dengan cara
-```bash
-streamlit run index.py
-```
+Jalankan file `Greedy-TSP.bat`
 
 ## Cara Menggunakan
 
